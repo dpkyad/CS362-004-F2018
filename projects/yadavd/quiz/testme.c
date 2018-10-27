@@ -5,14 +5,48 @@
 
 char inputChar()
 {
-    // TODO: rewrite this function
-    return ' ';
+    // TODO: rewrite this function 
+	int randomNum;
+	char c;
+	int lower = 32;
+	//int lower = 0;
+	int upper = 125;
+	//int upper = 8;
+	
+	//int val [9] ={32, 40, 41, 91, 93, 97, 120, 123, 125};
+ 	
+	randomNum  =  lower + (rand()%(upper-lower+1));
+	
+	//c = (char) val[randomNum];
+	c = (char) randomNum;
+	
+    return c;
 }
 
 char *inputString()
 {
     // TODO: rewrite this function
-    return "";
+	char string[6], *ptrToStr;
+	int i,randomNum;
+	int upper = 116;
+	//int upper = 4;
+	int lower = 101;
+	//int lower = 0;
+	
+	//char val [5] ={'r', 'e', 'e', 's', 't'};
+	
+	for(i = 0; i<5; i++)
+	{
+		randomNum  =  lower + (rand()%(upper-lower+1));
+		//string[i] = val[randomNum]; 
+		string[i] = (char) randomNum; 
+    }
+	
+    string[5] = '\0';
+	
+	ptrToStr = string;
+    
+	return ptrToStr;
 }
 
 void testme()
