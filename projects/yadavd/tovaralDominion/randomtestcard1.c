@@ -9,7 +9,7 @@
 
 #define TESTCARD "smithy"
 
-int cardSmithy(int currentPlayer, struct gameState *state, int handPos);
+//int cardSmithy(int currentPlayer, struct gameState *state, int handPos);
 
 //bug gets 2 cards rather than 3, that's why hand after discard is one less than expected
 //also discard function in Cardsmithy discards top card in hand which is not smithy card but the card that was drawn.
@@ -17,13 +17,14 @@ int cardSmithy(int currentPlayer, struct gameState *state, int handPos);
 int main() {
 
     int i, j, m;
+	int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
     int seed = 1000;
     int numPlayers = 2;
     int thisPlayer = 0;
 	struct gameState G, testG;
 	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
 			sea_hag, tribute, smithy, council_room};
-	int handpos = 0;
+	//int handpos = 0;
 	int totalTests = 10000;
 	int fail = 0;
 	
@@ -98,7 +99,8 @@ int main() {
 		}
 		
 		//call function
-		cardSmithy(thisPlayer, &testG, handpos);
+		//cardSmithy(thisPlayer, &testG, handpos);
+		cardEffect(smithy, choice1, choice2, choice3, &testG, handpos, &bonus);
 		
 		//check how many cards are in hand after running function
 		for(i =0; i<testG.handCount[thisPlayer]; i++)

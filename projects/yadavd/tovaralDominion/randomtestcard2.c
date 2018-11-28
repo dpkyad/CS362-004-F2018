@@ -9,7 +9,7 @@
 
 #define TESTCARD "village"
 
-int cardVillage(int currentPlayer, struct gameState *state, int handPos);
+//int cardVillage(int currentPlayer, struct gameState *state, int handPos);
 
 //bug discard function in Cardvillage discards top card in hand which is not village card but the card that was drawn.
 
@@ -17,13 +17,14 @@ int cardVillage(int currentPlayer, struct gameState *state, int handPos);
 int main() {
 
     int i, j, m;
+	int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
     int seed = 1000;
     int numPlayers = 2;
     int thisPlayer = 0;
 	struct gameState G, testG;
 	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse,
 			sea_hag, tribute, smithy, council_room};
-	int handpos = 0;
+	//int handpos = 0;
 	int totalTests = 10000;
 	int fail = 0;
 	
@@ -101,7 +102,8 @@ int main() {
 		}
 		
 		//call function
-		cardVillage(thisPlayer, &testG, handpos);
+		//cardVillage(thisPlayer, &testG, handpos);
+		cardEffect(village, choice1, choice2, choice3, &testG, handpos, &bonus);
 		
 		//check how many cards are in hand after running function
 		for(i =0; i<testG.handCount[thisPlayer]; i++)

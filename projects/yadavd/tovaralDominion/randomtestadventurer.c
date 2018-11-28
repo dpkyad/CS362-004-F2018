@@ -9,7 +9,7 @@
 
 #define TESTCARD "adventurer"
 
-int cardAdventurer(int currentPlayer, int temphand [], int drawntreasure, int z, struct gameState *state);
+//int cardAdventurer(int currentPlayer, int temphand [], int drawntreasure, int z, struct gameState *state);
 
 //bug when no treasure cards are found, cards in hand are discarded rather than just the ones drawn.
 
@@ -17,7 +17,7 @@ int main() {
 
     //int i, j, m;
     int i, j, m;
-    //int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+    int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
     int seed = 1000;
     int numPlayers = 2;
     int thisPlayer = 0;
@@ -108,8 +108,8 @@ int main() {
 		}
 		
 		//call function
-		//cardEffect(adventurer, choice1, choice2, choice3, &testG, handpos, &bonus);
-		cardAdventurer(thisPlayer, temphand, drawntreasure, z, &testG);
+		cardEffect(adventurer, choice1, choice2, choice3, &testG, handpos, &bonus);
+		//cardAdventurer(thisPlayer, temphand, drawntreasure, z, &testG);
 		
 		//check how many treasures are in hand after running function
 		for(i =0; i<testG.handCount[thisPlayer]; i++)
