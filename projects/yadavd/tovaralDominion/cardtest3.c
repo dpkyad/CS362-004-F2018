@@ -58,7 +58,7 @@ int main() {
 	testG.deck[thisPlayer][testG.deckCount[thisPlayer]-4] = tribute;
 	testG.deck[thisPlayer][testG.deckCount[thisPlayer]-5] = silver;
 	
-	cardEffect(smithy, choice1, choice2, choice3, &testG, handpos, &bonus);
+	cardEffect(village, choice1, choice2, choice3, &testG, handpos, &bonus);
 	//cardVillage(thisPlayer, &testG, handpos);
 	
 	for(i =0; i<testG.handCount[thisPlayer]; i++)

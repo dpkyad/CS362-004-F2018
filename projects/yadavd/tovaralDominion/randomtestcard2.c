@@ -47,7 +47,7 @@ int main() {
 
 	for(m = 0; m<totalTests; m++)
 	{
-		//printf("\nRUNNING TEST %d/%d\n", m+1, totalTests);
+		printf("\nRUNNING TEST %d/%d\n", m+1, totalTests);
 		
 		int currCard = 0;
 		int cardsFound = 0;
@@ -122,7 +122,7 @@ int main() {
 			fail++;
 		//else
 		//	printf("PASS\n");
-		/*
+		
 		//
 		if(testG.numActions != currAction+2)
 		{
@@ -145,7 +145,7 @@ int main() {
 		if(testG.discard[thisPlayer][testG.discardCount[thisPlayer]-1] != village)
 		{
 			printf ("FAIL: village not found in discard pile");
-		}*/
+		}
 
 	}
 	
